@@ -4,10 +4,8 @@ import pandas as pd
 from crewai import LLM
 from dotenv import load_dotenv
 
-# Load variables from .env file
 load_dotenv()
 
-# Access the key without hardcoding it
 groq_key = os.getenv("GROQ_API_KEY")
 
 llm = LLM(
@@ -16,7 +14,6 @@ llm = LLM(
     api_key=groq_key
 )
 
-# ... rest of your code ...
 print("downloading dataset from kaggle...")
 path = kagglehub.dataset_download("ashmitcajla/dataset-for-blood-glucose-level-readings")
 filename = os.listdir(path)[0]
