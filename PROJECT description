@@ -1,0 +1,88 @@
+# 🏥 Healthcare AI Agent — Blood Glucose Monitor
+
+A multi-agent AI healthcare assistant built with CrewAI that analyzes 
+real patient blood glucose data and generates complete health reports 
+with recommendations.
+
+Built at a hackathon by a 3-member team, each owning a separate part 
+of the codebase.
+
+---
+
+## 🤖 What It Does
+
+- Loads a real clinical dataset of **16,969 patient records** from Kaggle
+- Picks a random patient (or filter by age)
+- **Agent 1** fetches the patient's full health record
+- **Agent 2** analyzes all metrics and generates a health report
+- Final report includes glucose classification, blood pressure, 
+  heart rate, SPO2, symptoms, 5 health tips, and doctor advice
+
+---
+
+## 👥 Team Structure
+
+| File | Member | Role |
+|------|--------|------|
+| `member_a_data.py` | Member A | Data pipeline + LLM setup |
+| `member_b_agents.py` | Member B | AI agents + task definitions |
+| `member_c_runner.py` | Member C | Crew assembly + runner |
+
+---
+
+## 🛠️ Tech Stack
+
+- **CrewAI** — multi-agent orchestration
+- **Groq Llama 3.3** — free LLM for AI reasoning
+- **Kaggle Dataset** — 16,969 real patient blood glucose records
+- **Pandas + OpenPyXL** — data loading and processing
+- **Python 3.10+**
+
+---
+
+## 📊 Dataset
+
+**Dataset:** [Blood Glucose Level Readings](https://www.kaggle.com/datasets/ashmitcajla/dataset-for-blood-glucose-level-readings)
+
+Contains 16,969 patient records with:
+- Blood Glucose Level (mg/dL)
+- Blood Pressure (Systolic/Diastolic)
+- Heart Rate (bpm)
+- Body Temperature (°F)
+- SPO2 / Oxygen Level (%)
+- Sweating and Shivering symptoms
+- Diabetic / Non-Diabetic status
+
+---
+
+## ⚙️ Setup & Installation
+
+**1. Clone the repo**
+```bash
+git clone https://github.com/yourusername/healthcare-ai-agent.git
+cd healthcare-ai-agent
+```
+
+**2. Install dependencies**
+```bash
+pip install crewai kagglehub pandas openpyxl groq
+```
+
+**3. Get a free Groq API key**
+
+Sign up at [console.groq.com](https://console.groq.com) — free, 
+no credit card needed.
+
+**4. Add your API key**
+
+Open `member_a_data.py` and replace:
+```python
+os.environ["GROQ_API_KEY"] = "gsk_your_key_here"
+```
+
+**5. Run the project**
+```bash
+python3 member_c_runner.py
+```
+
+---
